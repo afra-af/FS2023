@@ -80,3 +80,50 @@ public class Test{
         return arr;
     }
 }
+
+
+
+#method 2
+
+import java.util.*;
+class zero{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int m=sc.nextInt();
+int[][] arr=new int[n][m];
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++)
+arr[i][j]=sc.nextInt();
+
+}
+int[][] arr2=one(arr,n,m);
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+System.out.print(arr[i][j]+"");
+}
+System.out.println();
+}
+}
+static int[][] one(int[][] arr,int n,int m){
+int[][] lookup=new int[n][m];
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++)
+lookup[i][j]=arr[i][j];
+}
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+if(lookup[i][j]==0){
+arr[i][0]=arr[0][j]=0;
+arr[i][j+1]=arr[i+1][j]=0;
+}
+}
+}
+return arr;
+}
+}
+
+
+
+
+
